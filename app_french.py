@@ -5,6 +5,10 @@ import emoji
 import string
 import tensorflow as tf
 import numpy as np
+
+import os
+os.environ['HF_HOME'] = 'C:/hf_cache'
+
 from transformers import AutoTokenizer, MarianMTModel, MarianTokenizer
 import datetime
 
