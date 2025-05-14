@@ -73,13 +73,32 @@ Fonctions principales :
 - `load_model_and_tokenizer()` : Charge le modèle DistilBERT et le tokenizer
 - `analyze_tweet()` : Prétraite le tweet et effectue l'inférence pour déterminer le sentiment
 
-### Version améliorée (`app_french.py`)
+### Version française (`app_french.py`)
 Cette version étend la version de base en ajoutant la prise en charge du français. Elle utilise un modèle de traduction Helsinki-NLP pour convertir les tweets français en anglais avant l'analyse. Le code détecte automatiquement la langue d'entrée et affiche la traduction à l'utilisateur pour plus de transparence.
+
+### Version améliorée (`tweet.py`)
+Cette version étend les deux autres versions de base en permettant à l'utilisateur de choisir la langue qu'il préfère avant de passer au prétraitement
 
 Fonctions supplémentaires :
 - `detect_language()` : Identifie si le texte est principalement en français ou en anglais
 - `translate_text()` : Traduit le texte français vers l'anglais
 - `load_models_and_tokenizer()` : Charge à la fois le modèle d'analyse et de traduction
+
+## Fine-tuning et modèles
+L'application repose sur un modèle DistilBERT fine-tuné pour la tâche d'analyse de sentiment sur un jeu de données de tweets.
+Le fine-tuning a été réalisé sur un corpus annoté manuellement avec trois classes (positif, neutre, négatif).
+
+### 🔧 Détails du fine-tuning (`evaluate_model.ipynb`)
+- Modèle de base : `distilbert-base-uncased`
+
+- Tâche : classification de sentiment à 3 classes
+
+- Données : tweets annotés
+
+- Durée : quelques minutes sur GPU
+
+ Remarque : Les performances en français sont affectées par la qualité de la traduction. Le modèle peut confondre les émotions lors du passage par la langue anglaise.
+
 
 ## Performances et limitations
 
