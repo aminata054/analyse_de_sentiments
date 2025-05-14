@@ -2,6 +2,8 @@
 
 Cette application utilise des modèles de deep learning pour analyser le sentiment des tweets et déterminer s'ils sont positifs, neutres ou négatifs. Développée par **Aminata BA** et **Dié Sylla**, elle est disponible en deux versions : une version de base qui analyse les tweets en anglais, et une version améliorée qui supporte également les tweets en français grâce à une traduction automatique.
 
+![CoverFile](header.png)
+
 ## Fonctionnalités
 
 ### Version de base
